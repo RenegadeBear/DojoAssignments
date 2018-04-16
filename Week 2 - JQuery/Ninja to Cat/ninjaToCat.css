@@ -1,0 +1,10 @@
+* {
+    /* display: block; */
+}
+img {
+    display: block;
+    border: 1px blueviolet solid;
+}
+#ninja0, #ninja1, #ninja2, #ninja3, #ninja4{
+    display: none;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Counter!</title>
+		<style>
+			*{
+				padding: 10px;
+				margin: 0px auto;
+				text-align: center;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1>Counter</h1>
+				<p>This page has been viewed {{ counter }} times.</p>
+
+		<form method="post" action="/plusTwo">	
+			<input type="hidden" name="secret" value="twoMore">	
+			<button type = "submit" value = "plusTwo">Increase views by 2!</button>
+		</form>
+
+		<form method="post" action="/reset">
+			<input type="hidden" name="secret" value="backToZero">
+			<button type = "submit" value="reset">RESET Counter</button>
+		</form>
+	</body>
+</html>

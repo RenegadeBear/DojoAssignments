@@ -1,0 +1,51 @@
+body {
+    font-family: arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 500px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+button {
+    border: transparent;
+    background-color: #06a;
+    color: #fff;
+    padding: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.container {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+fieldset {
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+h1 {
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: inline;
+}
+
+.danger {
+    background-color: #d00;
+}

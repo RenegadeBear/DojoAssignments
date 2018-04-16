@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style media="screen">
+    #orange {
+        height: 50px;
+        width: 150px;
+        background-color: orange;
+        padding: 5px;
+    }
+
+    #blue {
+        height: 50px;
+        width: 150px;
+        background-color: blue;
+        padding: 5px;
+    }
+
+    tbody {
+        /* background-color: yellow; */
+    }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(()=>{
+        $(".box").click(function(){
+            console.log($(this).text());
+        });
+
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#target").append("<h1 id='dynamic'>I am dynamic content</h1>");
+        });
+
+        $("#static").click(function(){
+            console.log("Good job!");
+        });
+
+        // $(document).on("click", "#dynamic", function(){
+        //     console.log(".on() works!");
+        // });
+    });
+    });
+
+
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DOM Demo</title>
+</head>
+<body>
+
+    <div id="orange" class="box">
+    	I am an orange box.
+    </div>
+    <br>
+    <div id="blue" class="box">
+    	I am a blue box.
+    </div>
+    <br>
+
+    <table border=1>
+      <tr><td>Column1</td><td>Column 2</td></tr>
+      <tr><td>1</td><td>2</td></tr>
+      <tr><td>3</td><td>4</td></tr>
+    </table>
+    <br>
+
+    <button>Add Content</button>
+    <h1 id="static">I am static content</h1>
+    <div id="target"></div>
+
+
+</body>
+</html>

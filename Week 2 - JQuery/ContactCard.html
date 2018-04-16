@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            /* border: salmon 1px solid; */
+        }
+        table, th, td{ 
+            border: 1px solid black;
+            padding: 20px;
+        }
+        form {
+            padding: 20px;
+        }
+        label {
+            display: inline-block;
+            float: left;
+            clear: left;
+            width: 80px;
+            text-align: right;
+            padding: 10px;
+        }
+        textarea{
+            display: inline-block;
+            float: left;
+            clear: left;
+            width: 250px;
+            text-align: justify;
+            padding: 20px;
+        }
+        input {
+            display: inline-block;
+            float: left;
+            padding: 10px;
+        }
+        h2 {
+            text-decoration-style: solid;
+            border-bottom: 2px solid black;
+            padding: 20px;
+            width: 350px;
+        }
+        button {
+            margin: 30px;
+            display: flex;
+            position: relative;
+            top: 75px;
+            right: 200px;
+            padding: 5px;
+        }
+        #submit {
+            display: flex;
+            position: relative;
+            top: 85px;
+            right: 150px;
+        }
+        div {
+            width: 200px;
+            height: auto;
+            display: inline-block;
+            position: relative;
+            top: 110px;
+            border: blue 1px solid;
+            padding: 5px;
+            margin: 3px;
+        }
+    </style>
+    <title>Contact Card</title>
+
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function() {
+
+            // $('#newuser').submit(function(){
+            // console.log($(this).serializeArray());
+            // return false;
+            // });
+
+            // $('#newuser').submit(function(){
+            //     $('tr').parent().append('<tr><td>"+first_name+"</td><td>"+last_name+"</td><td>"+email+"</td><td>"+contact+"</td></tr>')
+            // });
+
+            // $('#newuser').submit(function() {
+            //     var newrow = $(":input"); 
+            //         jQuery.each(newrow, function(i, first_name) {
+            //             $('#contacts').append('<div class ="card"><h1>'+first_name.value+'</h1><h3>Click&nbsp;for&nbsp;description!</h3><p></p></div>');
+            //         });
+            //     return false;
+            //     });
+
+
+            $('form').submit(function() {
+                $('#contacts').append('<div class ="card"><h2>'+first_name.value+last_name.value+'</h2><h4>Click for description!</h4><p>'+description.value+'</p></div>');
+                return false;
+                });
+            })
+        </script>
+
+</head>
+<body>
+
+    <form action="process.php" method="post" id = "newuser">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="First Name">
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="Last Name">
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" value="description"></textarea>
+        <br>
+        <input type="submit" value="Add User" id ="submit">
+    </form>
+    <div id = "contacts">
+
+    </div>
+    <!-- <button>Add User</button> -->
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fitness</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- Website Greeting -->
+		<h1>Fitness Tracker</h1>
+
+		<!-- Table of fitness activities -->
+		<fieldset>
+			<legend>Fitness Activities</legend>
+			<table>
+				<tr>
+					<th>Activity</th>
+					<th>Edit</th>
+				</tr>
+				{% for activity in activities %}
+					<tr>
+						<td>
+							{{activity.activities}}
+						</td>
+						<td>
+							<a href="/activity/{{activity.id}}/edit"><button>edit</button></a>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</fieldset>
+
+		<!-- Form for activity creation -->
+		<fieldset>
+			<legend>Add an activity</legend>
+			<form action="/activity" method="post">
+				<input type="text" name="activities" placeholder="activity"><br>
+				<button type="submit">Add an activity</button>
+			</form>
+		</fieldset>
+
+	</div>
+
+</body>
+</html>

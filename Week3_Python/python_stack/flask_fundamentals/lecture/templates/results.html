@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<h2>Dojo Survey</h2>
+
+	{{data["secret"]}}
+
+	<fieldset>
+		<legend>Results</legend>
+		<p>Your Name: {{data["name"]}}</p>
+		<p>Your Location: {{data["location"]}}</p>
+		<p>Favorite Language: {{data["language"]}}</p>
+		<p>Comment: {{data["comment"]}}</p>
+		<p><a href="/"><button>back</button></a></p>
+	</fieldset>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Disappearing Ninja</title>
+    <link rel="stylesheet" type="text/css" href="disappearingNinja.css">
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type ="text/javascript"> 
+        $(document).ready(function() {
+            $('img').click(function(){
+                $(this).hide();
+            });
+            $('button').click(function(){
+                $('img').show();
+            });
+        })
+
+    </script>
+</head>
+<body>
+    <div class = "wrapper">
+        <div class = "box">
+            <img src = "ninja.png" alt = "ninja">
+        </div>
+        <div class = "box">
+            <img src = "adventure-cat.png" alt = "adventure cat">        
+        </div>
+        <div class = "box">
+            <img src = "aidorucat.png" alt = "aidorucat">
+        </div>
+        <div class = "box">
+            <img src = "catandninja.png" alt = "cat and ninja">
+        </div>
+        <div class = "box">
+            <img src = "chellocat.jpg" alt = "chello cat">
+        </div>
+        <div class = "box">
+            <img src = "cherry.jpg" alt = "cherry">
+        </div>
+        <div class = "box">
+            <img src = "coder2.jpg" alt = "coder">
+        </div>
+        <div class = "box">
+            <img src = "codercat.jpg" alt = "coder cat"> 
+        </div>
+             
+        <br>
+        <button>Restore</button>
+    </div>
+</body>
+</html>

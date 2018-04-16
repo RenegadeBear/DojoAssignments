@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fitness</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- Website Greeting -->
+		<h1>Fitness Tracker</h1>
+
+		<!-- List of fitness activities -->
+		<fieldset>
+			<legend>Fitness Activities</legend>
+			<ul>
+				{% for activity in activities %}
+					<li>{{activity.activities}}</li>
+				{% endfor %}
+			</ul>
+		</fieldset>
+
+		<!-- Form for activity creation -->
+		<fieldset>
+			<legend>Edit {{activity.activities}}</legend>
+			
+				<form action="/activity/{{activity.id}}/update" method="post">
+					<input type="text" name="activities" value="{{activity.activities}}"><br>
+					<button type="submit">Edit {{activity.activities}}</button>
+				</form>
+
+				<a href="/"><button>Cancel</button></a>
+
+				<form action="/activity/{{activity.id}}/delete" method="post">
+					<button type="submit" class="danger">Delete {{activity.activities}}</button>
+				</form>
+
+		</fieldset>
+
+	</div>
+
+</body>
+</html>

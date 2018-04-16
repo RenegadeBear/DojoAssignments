@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ninja Money</title>
+		<style>
+			/** {
+				margin: 0px auto;
+				padding: 0px;
+				display: flex;
+			}*/
+			.places {
+				display:flex;
+			}
+			.place {
+				/*display: flex;*/
+				border: 1px black solid;
+				border-radius: 7px;
+				margin: 10px;
+				width: 250px;
+				text-align: center
+				/*padding: 5px;*/
+			}
+			.header {
+				display: flex;
+			}
+			.yourGold {
+				display: flex;
+				padding: 0px 5px;
+				border: 1px black solid;
+				border-radius: 5px
+			}
+			button {
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "header">
+			<h3>Your Gold:</h3>
+			<div class = "yourGold"><p>{{ session['yourGold'] }}</p></div>
+		</div>
+		<div class = "places">
+				<div class = "place">
+					<h1>Farm</h1>
+					<p>(earns 10-20 golds)</p>
+					<form action ="/process_money" method="POST">
+						<input type="hidden" name="place" value="farm">
+						<button type = "submit">Find Gold!</button>
+					</form>
+				</div>
+				<div class = "place">
+					<h1>Cave</h1>
+					<p>(earns 5-10 golds)</p>
+					<form action ="/process_money" method="POST">
+						<input type="hidden" name="place" value="cave">
+						<button type = "submit">Find Gold!</button>
+					</form>
+				</div>
+				<div class = "place">
+					<h1>House</h1>
+					<p>(earns 2-5 golds)</p>
+					<form action ="/process_money" method="POST">
+						<input type="hidden" name="place" value="house">
+						<button type = "submit">Find Gold!</button>
+					</form>
+				</div>
+				<div class = "place">
+					<h1>Casino</h1>
+					<p>(earns/takes 0-50 golds)</p>
+					<form action ="/process_money" method="POST">
+						<input type="hidden" name="place" value="casino">
+						<button type = "submit">Find Gold!</button>
+					</form>
+				</div>
+			</div>
+		<div class = "activities">
+			<h3>Activities:</h3>
+			{%for each in session['activity']:%}
+			<p>{{ session['activity'] }}</p>
+			{%endfor%}
+		</div>
+
+
+	</body>
+</html>

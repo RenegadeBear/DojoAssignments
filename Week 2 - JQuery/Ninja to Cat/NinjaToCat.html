@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja To Cat</title>
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type ="text/javascript"> 
+        var picture = "cat", position =  0;
+        function update (){
+            document.getElementsByTagName('img').style.backgroundImage = "url('"+picture+""+position+".png')";
+        }
+        
+        $(document).ready(function() {
+
+            $('img').click = function(e){
+                console.log(e);
+                if (picture == "cat") {
+                    picture = "ninja";
+                }
+                else if(picture == "ninja") {
+                    picture = "cat";
+                }
+                update();
+            };
+        })
+    </script>
+    <style>
+        * {
+            /* display: block; */
+        }
+        img {
+            display: block;
+            border: 1px blueviolet solid;
+        }
+        #ninja{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <img src = "cat0.png" alt = "piece 0" data-alt-src = "ninja0.png" />
+    <img src = "ninja0.png" alt = "piece 0" data-alt-src = "cat0.png" id = "ninja"/>
+    <img src = "cat1.png" alt = "piece 1" data-alt-src = "ninja1.png" />
+    <img src = "ninja1.png" alt = "piece 1" data-alt-src = "cat1.png" id = "ninja"/>
+    <img src = "cat2.png" alt = "piece 2" data-alt-src = "ninja2.png" />
+    <img src = "ninja2.png" alt = "piece " data-alt-src = "cat2.png" id = "ninja"/>
+    <img src = "cat3.png" alt = "piece 3" data-alt-src = "ninja3.png" />
+    <img src = "ninja3.png" alt = "piece 3" data-alt-src = "cat3.png" id = "ninja"/>
+    <img src = "cat4.png" alt = "piece 4" data-alt-src = "ninja4.png" />
+    <img src = "ninja4.png" alt = "piece 4" data-alt-src = "cat4.png" id = "ninja"/>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+        <fieldset>
+        <legend>New User Registration</legend>
+        <form action="/register" method="POST">
+    
+            <br>First Name: <input type="text" name="First_Name"><br>
+            <br> Last Name: <input type="text" name="Last_Name"><br>
+
+            <br> E-mail: <input type="email" name="E-mail"><br>
+            <br> Password: <input type="Password" name="Password"><br>
+            <br> Password-Confirmation: <input type="Password" name="confirmation"><br>
+            <br><button type="submit">Register</button>
+        </form>
+    </fieldset>
+    <br>
+    <fieldset>
+            <legend>User Login</legend>
+        <form action="/login" method="POST">
+            <br>E-mail: <input type="email" name= "E-mail"><br>
+            <br>Password: <input type="password" name= "Password"><br>
+            <br><button type="submit">Login</button><br>
+        </form>
+    </fieldset>
+</body>
+</html>

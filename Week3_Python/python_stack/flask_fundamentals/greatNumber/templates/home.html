@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Great Number Game</title>
+		<style>
+			*{
+				text-align: center;
+				font-family: arial;
+			}
+			.high, .low {
+				background-color: red;
+				color: white;
+				width: 100px;
+				height: 100px;
+				padding-top: 20px;
+				margin: 0px auto;
+				border: 20px white solid;
+			}
+			.equal {
+				background-color: green;
+				color: white;
+				width: 100px;
+				/*height: 100px;*/
+				padding-top: 20px;
+				margin: 0px auto;
+				border: 20px white solid;
+			}
+			button {
+				width: 75px;
+				margin: 10px;
+			}
+			fieldset {
+				width: 200px;
+				margin-top: 10px;
+				margin: 0px auto;
+			}
+			
+
+
+		</style>
+	</head>
+	<body>
+		<h1>Welcome to the Great Number Game!</h1>
+		<p>I am thinking of a number between 1 and 100</p>
+		<p>Take a guess!</p>
+		<div class = {{value}}>
+			<p>{{ answer }} </p>
+			{%if value == "equal"%}
+				<form action ="/again" method="POST">
+					<button type = "submit">Play Again!</button>
+				</form>
+			{%endif%}
+
+		</div>
+
+		<fieldset>
+			<form action = "/evaluate" method="post">
+				<!-- <input type="hidden" name="secret" value="quiet"> -->
+				<input type="text" name="guess">
+				<button type = "submit">Submit</button>
+			</form>
+			
+
+		</fieldset>
+	</body>
+</html>

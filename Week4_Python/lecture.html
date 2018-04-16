@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SLL</title>
+</head>
+<body>
+	<h1>Check your console!!!</h1>
+
+	<script type = "text/javascript">
+		function Node(val){
+			this.val = val;
+			this.next = null;
+		}
+
+		var listy = new SLL();
+
+		function SLL(){
+			this.head = null;
+			this.add = function(val){
+				if(this.head == null){
+					this.head = new Node(val);
+				}
+				else {
+					var runner = this.head;
+					while (runner.next !== null){
+						runner = runner.next;
+					}
+				}
+				runner.next = new Node(val);
+			}
+			return this;
+		}
+
+	</script>
+
+</body>
+</html>

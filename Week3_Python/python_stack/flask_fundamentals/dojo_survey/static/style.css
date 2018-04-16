@@ -1,0 +1,18 @@
+* {
+	margin: 0px;
+	wrapper: 0px;
+}
+.wrapper {
+	/*width: 750px;*/
+	/*height: 400px;*/
+	/*border: 1px solid blue;*/
+	/*margin: 0px auto;*/
+	/*padding: 20px;*/
+}
+button {
+	height: 50px;
+	width: 100px;
+	position: relative;
+	top: 300px;
+	right: 300px;
+}

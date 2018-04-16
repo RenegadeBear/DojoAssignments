@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My jQuery Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="jQuery_style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function() {
+
+            $('#hide').click(function(){
+                $('#magic').hide();
+            });
+            $('#show').click(function(){
+                $('#magic').show();
+            });
+            $('#image').click(function(){
+                $('#pup0').slideToggle();
+            });
+            $('#append').click(function(){
+                $('#addmore').append("and so much more...");
+            });
+            $('#addclass').click(function(){
+                $("#classy").addClass("highlight");
+            });
+            $('#toggle').click(function(){
+                $("#_toggle").toggle();
+            });
+            $('#toggle').click(function(){
+                $("#toggle_").toggle();
+            });
+            $('#slide_down').click(function(){
+                if ($("#pup2").is(":hidden")) {
+                    $("#pup2").slideDown("slow");
+                } else {
+                    $("#pup2").hide();
+                }
+            });
+            $('#slide_up').click(function(){
+                if ( $('#pup3').is(":hidden")) {
+                    $("#pup3").show("slow");
+                } else {
+                    $("#pup3").slideUp();
+                }
+            });
+            $('#fade_in').click(function(){
+                $('#pup4').fadeIn("slow");
+            });
+            $('#fade_out').click(function(){
+                $('span').fadeOut()
+            });
+            $('#before').click(function(){
+                $('#b1').before("more text");
+            });
+            $('#after').click(function(){
+                $('#a1').after("even more text");
+            });
+            $('#click').click(function(){
+                $(".minibox").html("<span class='aqua'>PORK<b>& More pork</b></span>");
+            });
+            $('#reveal').click(function(){
+                var alt = $('#pup6').attr("alt");
+                $('#pupdoor').text(alt);
+            });
+            $("input")
+                .keyup(function() {
+                    var value = $(this).val();
+                    $("h3").text(value);
+                })
+                .keyup();
+            $('#convert').click(function(){
+                var str = $('#alter').text();
+                $('#native').html(str);
+            });
+            $('#enterdata').click(function(){
+                $('#stuff').data("test", {first: "this", last: "that"});
+                $('#data1').text($('#stuff').data("test").first);
+                $('#data2').text($('#stuff').data("test").last);
+            });
+
+        })
+    </script>
+            
+
+
+</head>
+<body>
+    <div class = "wrapper">
+        <div class = "header">
+            <h1>jQuery 101</h1>
+            <ul>
+                <li><a href="http://api.jquery.com/">jQuery API</a></li>
+                <li><a href="https://developers.google.com/speed/libraries/#jquery">Google Hosted Library</a></li>
+            </ul>
+        </div>
+        <div class = "mainpage">
+            <div class = "box">
+                <!-- <div class = "button">Click Me!</div> -->
+                <button id = "hide">Hide</button>
+                <button id = "show">Show</button>
+                <h2>Hide Show</h2>
+                <p id = "magic">Bacon ipsum dolor amet swine leberkas t-bone filet mignon capicola, ribeye pastrami pig pancetta tongue pork belly.</p>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "image">No, click Me!</div>
+                <h2>Slidetoggle</h2>
+                <p>Hamburger sausage jerky capicola pork loin frankfurter doner. Filet mignon biltong ham hock ribeye. </p>
+                <img src = "lincoln.jpg" alt = "pic of my pup" id = "pup0">
+                <h4></h4>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "append">Wait, pick me!</div>
+                <h2>Apppend</h2>
+                <p id = "addmore">Capicola shoulder chicken filet mignon pig meatloaf. Flank pastrami andouille spare ribs ground round jowl swine.</p>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "addclass">Click Me!</div>
+                <h2>Add Class</h2>
+                <p id="classy">Bacon ipsum dolor amet swine leberkas t-bone filet mignon capicola, ribeye pastrami pig pancetta tongue pork belly.</p>
+                <br>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "toggle">No, click Me!</div>
+                <h2>Toggle</h2>
+                <p id = "_toggle">Hamburger sausage jerky capicola pork loin frankfurter doner. Filet mignon biltong ham hock ribeye. </p>
+                <!-- second paragraph id display = none -->
+                <p id = "toggle_">Two all beef patties, special sauce, lettuce, cheese, pickles, onions on a sesame seed bun!</p> 
+            </div>
+            <div class = "box">
+                <div class = "button" id = "slide_down">Wait, pick me!</div>
+                <h2>Slide Down</h2>
+                <img src = "img2.jpg" alt = "my pup as a baby" id = "pup2">
+                <h4></h4>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "slide_up">Click Me!</div>
+                <h2>Slide Up</h2>
+                <img src = "img3.jpg" alt = "another pic of my puppy" id = "pup3">
+                <h4></h4>
+                <br>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "fade_in">No, click Me!</div>
+                <h2>Fade In</h2>
+                <img src = "img4.jpg" alt = "puppy at door" id = "pup4">
+                <h4></h4>
+            </div>
+            <div class = "box" >
+                <div class = "button" id = "fade_out">Wait, pick me!</div>
+                <h2>Fade Out</h2>
+                <p><span>Capicola shoulder chicken filet mignon pig meatloaf. </span>Flank pastrami andouille spare ribs ground round jowl swine.</p>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "before">No, click Me!</div>
+                <h2>Before</h2>
+                <p id = "b1">Hamburger sausage jerky capicola pork loin frankfurter doner.  Filet mignon biltong ham hock ribeye.</p>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "after">Wait, pick me!</div>
+                <h2>After</h2>
+                <p id = "a1">Capicola shoulder chicken filet mignon pig meatloaf. Flank pastrami andouille spare ribs ground round jowl swine.</p>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "click">Click Me!</div>
+                <h2>HTML</h2>
+                <p>Bacon ipsum dolor amet swine leberkas t-bone filet mignon capicola, ribeye pastrami pig pancetta tongue pork belly.</p>>
+                <div class = "minibox"></div>
+                <div class = "minibox"></div>
+                <div class = "minibox"></div>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "reveal">No, click Me!</div>
+                <h2>attr</h2>
+                <p>Hamburger sausage jerky capicola pork loin frankfurter doner.</p>
+                <img src = "img6.jpg" alt = "puppy at door" id = "pup6">
+                <h4 id = "pupdoor"></h4>
+               </div>
+            <div class = "box">
+                <input type = "text" value = "type here">
+                <h2>val</h2>
+                <h3></h3>
+            </div>
+            <div class = "box">
+                <div class = "button" id = "convert">No, click Me!</div>
+                <h2>text</h2>
+                <p id = "alter">Hamburger <strong>sausage jerky capicola</strong> pork loin frankfurter doner. Filet mignon <em>biltong ham hock</em> ribeye. </p>
+                <br>
+                <p id = "native"></p>    
+            </div>
+            <div class = "box">
+                <div class = "button" id = "enterdata">Wait, pick me!</div>
+                <h2>data</h2>
+                <p id = "stuff">Returning previously stored data. Such as &nbsp;<span id = "data1"></span>&nbsp;and&nbsp; <span id = "data2"></span> .</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            /* border: salmon 1px solid; */
+        }
+        table, th, td{ 
+            border: 1px solid black;
+            padding: 20px;
+        }
+        form {
+            padding: 20px;
+        }
+        label{
+            display: inline-block;
+            float: left;
+            clear: left;
+            width: 80px;
+            text-align: right;
+            padding: 10px;
+        }
+        input {
+            display: inline-block;
+            float: left;
+            padding: 10px;
+        }
+        h2 {
+            text-decoration-style: solid;
+            border-bottom: 2px solid black;
+            padding: 20px;
+            width: 350px;
+        }
+        button {
+            margin: 30px;
+            display: flex;
+            position: relative;
+            top: 75px;
+            right: 200px;
+            padding: 5px;
+        }
+        #submit {
+            display: flex;
+            position: relative;
+            top: 60px;
+            right: 150px;
+        }
+    </style>
+    <title>Users</title>
+
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type ="text/javascript">
+        // function () {
+        //     $('#newuser').submit(function (e) {
+        //         var newrow = new Object ();
+        //         newrow.first_name 
+        //     })
+        // }
+        // var array = [first_name, last_name, email, contact]
+
+        $(document).ready(function() {
+
+            $('#newuser').submit(function(){
+            console.log($(this).serializeArray());
+            return false;
+            });
+
+            // $('#newuser').submit(function(){
+            //     $('tr').parent().append('<tr><td>"+first_name+"</td><td>"+last_name+"</td><td>"+email+"</td><td>"+contact+"</td></tr>')
+            // });
+
+            // $('#newuser').submit(function() {
+            //     var newrow = $(":input"); 
+            //         jQuery.each(newrow, function(i, first_name) {
+            //             $('#users')
+            //             .find('tbody tr:last').append('<td>'+first_name.value+'</td>');
+            //         });
+            //     return false;
+            //     });
+            // })
+
+            $('#newuser').submit(function() {
+                $('#users').find('tbody tr:last').append('<tr><td>'+first_name.value+'</td><td>'+last_name.value+'</td><td>'+email.value+'</td><td>'+contact.value+'</td></tr>');
+                return false;
+                });
+
+                
+            })
+
+        // &&(function(){$('#newuser').serializeArray("first_name")}));
+
+    </script>
+
+</head>
+<body>
+    <table style="width:50%" id = "users">
+        <tr id = "userlist">
+            <th>Firstname</th>
+            <th>Lastname</th> 
+            <th>Email Address</th>
+            <th>Contact#</th>
+        </tr>  
+    </table>
+
+    <h2>Add User</h2>
+
+    <form action="process.php" method="post" id = "newuser">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="First Name">
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="Last Name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="Email">
+        <br>
+        <label for="contact">Contact#:</label>
+        <input type="text" id="contact" name="contact" value="Phone Number">
+        <br>
+        <input type="submit" value="Add User" id ="submit">
+    </form>
+
+    <!-- <button>Add User</button> -->
+
+</body>
+</html>

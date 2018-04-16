@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SLL</title>
+</head>
+<body>
+<h1>Check your console!!!</h1>
+<script type="text/javascript">
+	
+	
+	function Node(val){
+		this.val = val;
+		this.next = null;
+	}
+
+	function SLL(){
+		this.head = null;
+		this.add = function(val){
+			if(this.head === null){
+				this.head = new Node(val);
+			}else{
+				var runner = this.head;
+				while(runner.next !== null){
+					runner = runner.next;
+				}
+				runner.next = new Node(val);
+			}
+			return this;
+		}
+	}
+
+	var listy = new SLL();
+	listy.add(2).add(6).add(8).add(10).add(5).add(3).add(12);
+	console.log(listy);
+
+	this.removeFront = function(){
+		if (this.head != null){
+			this.head=this.head.next;
+		}
+		return this;
+	}
+
+	this.length = function() {
+		var length = 0;
+		if (this.head == null){
+			break;
+		}
+		else if (this.head != null){
+			length += 1;
+			var runner = this.head;
+			while(runner.next!= null){
+				length += 1;
+				runner = runner.next
+			}
+		}
+		return length;
+	}
+
+	this.contains = function(match){
+		if (this.head == null){
+			return false;
+		}
+		else if(this.head.val == match){
+			return true;
+		}
+		else if(this.head.value != match){
+			var runner = this.head;
+			while(runner.next != null){
+				if(runner.next.val == match){
+					return true;
+				}
+				runner = runner.next;
+			}
+			return False;
+		}
+	}
+
+	this.removeBack = function(){
+		if (this.head == null){
+			return this;
+		}
+		else if (this.head.next != null){
+			var runner = this.head;
+			while(runner.next.next != null){
+				runner = runner.next;
+				if (runner.next.next == null){
+					runner.next = runner.next.next;
+					return this;
+				}
+			}
+		}
+		this.head = this.head.next;
+		return this;
+	}
+
+	this.max = function(){
+		let max = this.head == nul? null: this.head.val
+		// if(this.head == nul){
+		// 	return False;
+		// }
+		// var max = this.head.val;
+		var runner = this.head;
+		while(runner.next != null){
+			if(runner.next.val > max){
+				max = runner.next.val;
+			}
+			runner = runner.next;
+		}
+		return max;
+	}
+
+</script>
+
+</body>
+</html>

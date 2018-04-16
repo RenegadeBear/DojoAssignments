@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+	<h1>Survey Form</h1>
+
+	<fieldset>
+		<legend>Survey</legend>
+		<form action="/process" method="post">
+			<input type="hidden" name="secret" value="I am a secret">
+			<p>Your Name: <input type="text" name="name"></p>
+			<p>Your Location: <select name="location">
+				<option>Seattle</option>
+				<option>San Jose</option>
+				<option>Burbank</option>
+				<option>Tulsa</option>
+				<option>Dallas</option>
+				<option>Chicago</option>
+				<option>NOVA</option>
+				<option>Online</option>
+			</select></p>
+			<p>Favorite Language: <select name="language">
+				<option>Python</option>
+				<option>Ruby</option>
+				<option>PHP</option>
+				<option>C#</option>
+				<option>Java</option>
+				<option>JavaScript</option>
+				<option>C++</option>
+				<option>Perl</option>
+			</select></p>
+			<p>Comment:<br> <textarea name="comment"></textarea></p>
+			<button type="submit">Submit</button>
+		</form>
+	</fieldset>
+
+</body>
+</html>

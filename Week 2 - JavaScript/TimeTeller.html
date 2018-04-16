@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>JavaScript Practice</title>
+</head>
+<body>
+    
+</body>
+<script type = "text/javascript">
+
+function tellTime(HOUR, MINUTE, PERIOD){
+    if(MINUTE<30 && PERIOD=="AM"){
+        console.log("It's just after",HOUR,"in the morning.");
+    }
+    else if(MINUTE>30 & PERIOD=="AM"){
+        console.log("It's almost",(HOUR+1),"in the morning.");
+    }
+    else if(MINUTE<30 && PERIOD != "AM"){
+        console.log("It's just after", HOUR, "in the evening.");
+    }
+    else if(MINUTE>30 && PERIOD != "AM"){
+        console.log("It's almost",(HOUR+1),"in the evening.")
+    }
+    else if(MINUTE==30 && PERIOD=="AM"){
+        console.log("It's half past",HOUR,"in the morning.");
+    }
+    else if(MINUTE==30 && PERIOD!="AM"){
+        console.log("It's half past",HOUR,"in the evening.");
+    }
+
+}
+
+</script>
+</html>

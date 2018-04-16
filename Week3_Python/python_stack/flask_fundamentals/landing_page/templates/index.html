@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello Flask!</title>
+		<link rel = 'stylesheet' type='text/css' href="{{ url_for('static',filename='my_style_sheet1.css')}}">
+		<!-- <script type = 'text/javascript' src="{{ url_for('static', filename='my_script1.js')}}"></script> -->
+	</head>
+	<body>
+		<h1>Welcome to my landing page...</h1>
+		<p>My name is {{name}}.</p>
+		<a href = '/ninjas'>Ninjas</a>
+		<a href = "/dojos">Dojos</a>
+	</body>
+</html>

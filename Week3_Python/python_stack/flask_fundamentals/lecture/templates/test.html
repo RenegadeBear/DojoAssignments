@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<style>
+	table {
+	    font-family: arial, sans-serif;
+	    border-collapse: collapse;
+	    width: 100%;
+	}
+
+	td, th {
+	    border: 1px solid #dddddd;
+	    text-align: left;
+	    padding: 8px;
+	}
+
+	tr:nth-child(even) {
+	    background-color: #dddddd;
+	}
+	</style>
+</head>
+<body>
+
+<p>Test something</p>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Buy</th>
+	</tr>
+	{% for product in products %}
+		<tr>
+			<td>{{product["name"]}}</td>
+			<td>{{product["price"]}}</td>
+			<td>{{product["quantity"]}}</td>
+			{% if product["quantity"] == 0 %}
+				<td><button disabled>Buy Now!</button></td>
+			{% else %}
+				<td><a href="/buy/{{product['id']}}"><button>Buy Now!</button></a></td>
+			{% endif %}
+		</tr>
+	{% endfor %}
+</table>
+
+</body>
+</html>
