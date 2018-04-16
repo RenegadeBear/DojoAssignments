@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    outline: 1px seagreen solid;
+}
+#blue, #blue2, #blue3{
+    color: #0085F0;
+}
+#red{
+    color: red;
+}
+h6{
+    color: #2ac7df;
+    font-size: 26px;
+}
+h2{
+    color: white;
+    margin-left: 40px;
+    font-size: 26px;
+}
+h3{
+    color: #0085F0;
+}
+h4{
+    font-size: 22px;
+}
+a{
+    color:#2AC7DF;
+    text-decoration: none;
+}
+/* ul{
+    list-style-type: disc;
+} */
+/* em{
+    font-weight:thick;
+} */
+.wrapper{
+    width: 970px;
+    margin: 0px auto;
+    height: auto;
+    display: flex;
+}
+.header{
+    display: flex;
+    height: 101px;
+    width: auto;
+}
+.header img{
+    height: 70px;
+    width: 70px;
+    /* display: flex; */
+    z-index: 1;
+}
+.headertop{
+    height: 50px;
+    width: 894px;
+    display: flex;
+}
+.headerbottom{
+    height: 30px;
+    width: 950px;
+    background-color:#0085F0;
+    display: flex;
+    position: absolute;
+    top: 50px;
+    padding: 10px;
+}
+.ads{
+    display:flex;
+    height:500px;
+    width: 220px;
+    position: absolute;
+    top:103px;
+    padding: 25px 0px;
+    /* border-bottom: 1px; */
+}
+.adtop{
+    height: 220px;
+    border-bottom: 1px grey solid;
+}
+.adtop p{
+    padding-bottom: 10px;
+    width: 220px;
+}
+.adtop img{
+    padding: 0px 4px;
+}
+.adbottom{
+    display: flex;
+    position: absolute;
+    top: 250px;
+    width: 300px;
+    text-align: center;
+    padding-top: 20px;
+}
+.adbottom p{
+    display: flex;
+    position: absolute;
+    left: 50px;
+    color: white;
+    font-size: 22px;
+    z-index: 1;
+    text-align: center;
+    width: 130px;
+    top: 35px;
+}
+.adbottom img{
+    display: flex;
+    position: absolute;
+    /* width: 220px; */
+}
+.adbottom a{
+    display: flex;
+    position: absolute;
+    top: 275px;
+    padding-left: 20px;
+}
+/* .adbottom > img:first-child{
+    position: absolute;
+    width: 100px;
+    left: 20px;
+    top: 50px;
+    width: 30%;
+} */
+.adbottom > img:nth-child(2){
+    position: absolute;
+    top: 20px;
+    width: 220px;
+}
+.adbottom > img:nth-child(3){
+    position: absolute;
+    width: 30%;
+    left: 65px;
+    top: 140px;
+}
+.adbottom > img.nth-child(4){
+    position: absolute;
+    width: 80%;
+}
+
+
+
