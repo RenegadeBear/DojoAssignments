@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Word</title>
+    <style>
+        * {
+            text-align: center;
+            margin: 0px auto;
+        }
+        div {
+            border: 2px solid black;
+        }
+        button {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>Random Word (attempt # {{request.session.count}})</p>
+    <div><h1>{{request.session.randword}}</h1></div>
+    <form action="/submit" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="generate">
+        <button type = "submit">Generate</button>
+    </form>
+    <br>
+    <form action="/reset" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="reset">
+        <button type = "submit">Reset</button>
+    </form>
+    
+</body>
+</html>
