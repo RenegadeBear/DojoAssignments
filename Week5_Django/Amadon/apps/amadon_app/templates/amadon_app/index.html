@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            }
+    </style>
+</head>
+<body>
+    <h1>Amadon Store!</h1>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Dojo Tshirt</td>
+            <td>$19.99</td>
+            <td>
+                <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+                <select name = 'quantity'>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                </select>
+            </td>
+            <td>
+                <input type = 'hidden' name='product_id' value='1111' />
+                <button type = "submit">Buy!</button>
+            </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Dojo Sweater</td>
+            <td>$29.99</td>
+            <td>
+                <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+                <select name = 'quantity'>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                </select>
+            </td>
+            <td>
+                <input type = 'hidden' name='product_id' value='2222' />
+                <button type = "submit">Buy!</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Dojo Cup</td>
+            <td>$4.99</td>
+            <td>
+                <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+                <select name = 'quantity'>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                </select>
+            </td>
+            <td>
+                <input type = 'hidden' name='product_id' value='3333' />
+                <button type = "submit">Buy!</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Algorithm Book</td>
+            <td>$49.99</td>
+            <td>
+                <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+                <select name = 'quantity'>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                </select>
+            </td>
+            <td>
+                <input type = 'hidden' name='product_id' value='4444' />
+                <button type = "submit">Buy!</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
