@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Session Words</title>
+    <style>
+        .wrapper {
+            display: flex;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            /* width: 750px; */
+            /* border: 1px solid salmon; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class = "wrapper">
+        <div class = box>
+            <h3>Add a new word</h3><br>
+            <form action="/add_word" method="post"><br>
+                {% csrf_token %}
+                <textarea name="new_word"></textarea><br>
+                <p>Choose color</p>
+                <label for="color">Red</label>
+                <input type="radio" name="color" value="red"><br>
+                <label for="color">Green</label>
+                <input type="radio" name="color" value="green"><br>
+                <label for="color">Blue</label>
+                <input type="radio"name="color" value="blue"><br>
+                <label for="bigfont">show in BIG fonts!</label>
+                <input type="checkbox" name="checkbox"><br>
+                <button type="submit">Add to Session</button><br>
+            </form>
+        </div>
+        <div class = box>
+            <form action="/clear" method="post">
+                 <button type="submit">Clear Session</button><br>
+                {% csrf_token %}
+            </form>
+            <!-- <p style="font-size: {{request.session.fontsize}} ; color: {{request.session.fontcolor}};">{{request.session.message}}</h2><p>- added on {{request.session.timestamp}}</p> -->
+            {% for msg in request.session.activity %}
+                <xml>{{msg|safe}}</xml>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
