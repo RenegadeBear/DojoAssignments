@@ -44,7 +44,7 @@
             </form>
             <!-- <p style="font-size: {{request.session.fontsize}} ; color: {{request.session.fontcolor}};">{{request.session.message}}</h2><p>- added on {{request.session.timestamp}}</p> -->
             {% for msg in request.session.activity %}
-                <xml>{{msg|safe}}</xml>
+                {{msg|safe}}
             {% endfor %}
         </div>
     </div>
