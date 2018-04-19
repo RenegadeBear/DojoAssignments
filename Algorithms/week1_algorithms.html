@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Week 1 Algorithms</title>
+    </head>
+    <body>
+
+    </body>
+    <script type="text/javascript">
+
+    function sigma(num){
+        var sum = 0;
+        for (var i = num; i > 0; i--){
+            sum = sum + i;
+        }
+        return sum;
+    }
+    
+    function factorial(num){
+        var fact = num;
+        for (var i = fact-1; i > 0; i--){
+            fact = fact * i;
+        }
+        return fact;
+    }
+
+    function generateCoinChange(cents){
+        var dollar = 100;
+        var halfdollar = 50;
+        var quarter = 25;
+        var dime = 10;
+        var nickle = 5;
+        var penny = 1;
+        var change = [];
+        var temp = cents;
+
+        if(temp/dollar >= 1){
+            change.push(Math.floor(temp/dollar)+"dollars");
+        };
+        temp = temp - (Math.floor(temp/dollar)*dollar);
+        if(temp/halfdollar >= 1){
+            change.push(Math.floor(temp/halfdollar)+"halfdollars");
+        temp = temp - (Math.floor(temp/halfdollar)*halfdollar);
+        };
+        if(temp/quarter >= 1){
+            change.push(Math.floor(temp/quarter)+"quarters");
+            };
+        temp = temp - (Math.floor(temp/quarter)*quarter);
+        if(temp/dime >= 1){
+            change.push(Math.floor(temp/dime)+"dimes");
+        };
+        temp = temp - (Math.floor(temp/dime)*dime);
+        if(temp/nickle >= 1){
+            change.push(Math.floor(temp/nickle)+"nickles");
+        };
+        temp = temp - (Math.floor(temp/nickle)*nickle);
+        if(temp>0){
+            change.push(temp+"pennies");
+        }
+        return change;
+    }
+
+    function generateFibonacci(idx){
+        var arr = [0,1];
+
+        for (var i = 0; i < idx; i++){
+            arr.push(arr[i]+arr[i+1]);
+        }
+        console.log(arr);
+        return arr[idx];
+    }
+
+    </script>
+</html>

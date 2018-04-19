@@ -1,0 +1,1 @@
+function SLNode (value)
