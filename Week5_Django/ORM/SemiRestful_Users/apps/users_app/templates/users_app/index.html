@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users Index</title>
+    <style>
+        *{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #7c7b7b;
+        }
+        tr:nth-child(even) {
+            background-color: #e6b0cf;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+        {% for record in usertable %}
+        <tr>
+            <td>{{record.id}}</td>
+            <td><a href='/show/{{record.id}}'>{{record.first_name}} {{record.last_name}}</a></td>
+            <td>{{record.email}}</td>
+            <td>{{record.created_at}}</td>
+            
+            <td><a href='/show/{{record.id}}'>Show</a> <a href='/edit/{{record.id}}'>Edit</a> <a href='/delete/{{record.id}}'>Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2><a href='/new'>Add a new user</a></h2>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit User *</title>
+    <style>
+        *{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+      
+    <h1>Edit User {{userdata.id}}</h1>
+    <form action='/update/{{userdata.id}}' method='post'>
+        {% csrf_token %}
+        <p>First Name:</p>
+        <input type = "text" name="first_name" value="{{userdata.first_name}}">
+        <p>Last Name:</p>
+        <input type = "text" name="last_name" value="{{userdata.last_name}}">
+        <p>Email:</p>
+        <input type = "email" name="email" value= "{{userdata.email}}">
+        <br><br>
+        <button type ='submit'>Update</button>   
+    </form>
+    <br>
+
+    {% if messages %}
+    <ul class = "messages">
+        {% for msg in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ msg }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    <a href='/show/{{userdata.id}}'>Show</a> | <a href='/'>Go Back</a>
+</body>
+</html>
