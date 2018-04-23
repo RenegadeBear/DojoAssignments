@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Home</title>
+    <style>
+        ul, li {
+            display: flex;
+            padding: 10px;
+            text-decoration: none;
+            float: right;
+        }
+        h1 {
+            display: flex;
+            float: left;
+        }
+        .wrapper {
+            display: inline-block;
+            width: 1000px;
+        }
+        * {
+            margin: 0px auto;
+            /* border: 1px solid salmon; */
+        }
+        .header {
+            display: flex;
+        }
+        .body { 
+            display: flex;
+            width: 700px;
+        }
+        .col {
+            width: 480px;
+            margin: 5px;
+            /* display: flex; */
+        }
+        .list {
+            /* display: flex; */
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            overflow: scroll;
+        }
+        .list ul, li{
+            display: block;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class ="header">
+            <h2>Welcome, {{user.username}}!</h2>
+            <ul>
+                <li><a href="/add">Add Book and Review</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="body">
+        <div class="col">
+            <h3>Recent&nbspBook&nbspReviews:</h3><br>
+            {% for item in user_reviews %}
+            <h4><a href="/show/{{item.of_book.id}}">{{item.of_book.title}}</a></h4>
+            <p><strong>Rating:</strong> {{item.rating}} </p>
+            <p><strong><a href="/profile/{{item.rated_by.id}}">{{item.rated_by.username}}</a></strong> says: {{item.review}}</p>
+            <p><em>Posted on {{item.created_at}}</em></p><br>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h3>Other&nbspBooks&nbspwith&nbspReviews:</h3><br>
+            <div class="list">
+                <ul>    
+                {% for item in other_reviews %}
+                    <li><a href="show/{{item.of_book.id}}">{{item.of_book.title}}</a></li><br>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>

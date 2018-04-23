@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Review of Book</title>
+    <style>
+        ul, li {
+            display: flex;
+            padding: 10px;
+            text-decoration: none;
+            float: right;
+        }
+        h1 {
+            display: flex;
+            float: left;
+        }
+        .wrapper {
+            display: inline-block;
+            width: 1000px;
+        }
+        * {
+            margin: 0px auto;
+            /* border: 1px solid salmon; */
+        }
+        .header {
+            display: flex;
+        }
+        .body { 
+            display: flex;
+            width: 700px;
+        }
+        .col {
+            width: 480px;
+            margin: 5px;
+            /* display: flex; */
+        }
+        button {
+            float: right;
+        }
+        h3 {
+            display: block;
+        }
+        .del {
+            display: flex;
+            /* float: right; */
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class ="header">
+            <div>
+                <h2>{{book.title}}</h2>
+                <h4>Author: {{book.work_by.author}}</h4>
+            </div>
+            <ul>
+                <li><a href="/books">Home</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul><br>
+        </div>
+        <div class="body">
+            <div class="col">
+                <h3>Reviews:</h3>
+                {% for item in book_reviews %}
+                <hr>
+                <p><strong>Rating:</strong> {{item.rating}} </p>
+                <p><strong><a href='/profile/{{item.rated_by.id}}'>{{item.rated_by.username}}</a></strong> says: {{item.review}}</p>
+                <p><em>Posted on {{item.created_at}}</em></p>
+                {% if user == item.rated_by.id %}
+                    <div class="delete">
+                    <a href="/delete/{{item.id}}">Delete this Review</a>
+                    </div>
+                {% endif %}
+                {% endfor %}
+                
+            </div>
+            <div class="col">
+                <fieldset>
+                    <legend>Add a Review:</legend>
+                    <form action="/add_review" method="post">
+                        {% csrf_token %}
+                    <p><textarea name="review"></textarea></p>
+                    <p>Rating: <input type="number" name="rating" min="1" max="5"></p>
+                    <button type="submit">Submit Review</button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

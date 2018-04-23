@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Reviews</title>
+    <style>
+        .header {
+            display: flex;
+            float: right;
+        }
+        ul, li {
+            padding: 10px;
+            list-style-type: none;
+            float: right;
+        }
+        div {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <ul>
+                <li><a href="/books">Home</a></li>
+                <li><a href="/add">Add Book and Review</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div><br>
+        <h2>User Alias: {{user.username}}</h2>
+        <h3>Name: {{user.first_name}} {{user.last_name}}</h3>
+        <h3>Email: {{user.email}}</h3>
+        <h3>Total Reviews: {{books_reviewed|safe}}</h3><br><br>
+
+        <h3>Posted Reviews on the following books:</h3>
+        {% for rev in user_reviews %}
+            <a href='/show/{{rev.of_book.id}}'>{{rev.of_book.title}}</a>
+        {% endfor %}
+    </div>
+</body>
+</html>
