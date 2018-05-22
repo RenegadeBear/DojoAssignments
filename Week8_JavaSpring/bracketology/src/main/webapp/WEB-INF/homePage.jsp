@@ -32,7 +32,7 @@
 
     <a href="/makebracket">Make your bracket!</a>
 
-  <!-- <div id="col3">
+  <div id="col3">
     <div class="vliner">
       <div class="slot c3" id="c3s1" data-col="3" data-game="1"></div>
       <div class="slot c3" id="c3s2" data-col="3" data-game="1"></div>
@@ -125,7 +125,7 @@
       <input id="myData" type="text"  name="myData">
       <input type="submit" value="Submit">
     </form>
-  <script src="js/bracket.js"></script> -->
+  <script src="js/bracket.js"></script>
 
   
 
