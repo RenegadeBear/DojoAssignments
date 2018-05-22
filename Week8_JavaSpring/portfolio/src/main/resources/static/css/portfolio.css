@@ -1,0 +1,20 @@
+* {
+    margin: 0px;
+    border: 0px;
+}
+.wrapper {
+    margin: 0px auto;
+    text-align: center;
+}
+body {
+    display: flex;
+}
+h1 {
+    color: purple;
+}
+h3 {
+    color: blue;
+}
+.col {
+    display: flex;
+}
